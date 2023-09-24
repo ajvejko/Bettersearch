@@ -13,10 +13,7 @@ onClickOutside(navbar, () => (show.value = false));
 
 <template>
   <nav>
-    <div
-      ref="navbar"
-      class="shadow-backgroundLight fixed left-0 right-0 top-0 z-10 shadow-xl dark:shadow-backgroundDark"
-    >
+    <div ref="navbar" class="fixed left-0 right-0 top-0 z-10">
       <div
         class="bg-backgroundLight/60 flex justify-between px-6 py-2 backdrop-blur-[10px] dark:bg-backgroundDark/60"
       >
@@ -151,7 +148,7 @@ onClickOutside(navbar, () => (show.value = false));
 <style>
 .slide-fade-enter-active,
 .slide-fade-leave-active {
-  transition: 0.5s ease;
+  transition: 0.3s ease;
 }
 
 .slide-fade-enter-from,
