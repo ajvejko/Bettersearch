@@ -22,7 +22,7 @@ module.exports = {
         accentDark: "#e79da9",
       },
       animation: {
-        blob: "blob 3s infinite",
+        blob: "blob 8s infinite",
       },
       keyframes: {
         blob: {
