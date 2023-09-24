@@ -5,7 +5,7 @@ import WebTable from "./WebTable.vue";
 
 <template>
   <div
-    class="text-textLight mt-32 text-center font-bebas text-5xl dark:text-textDark"
+    class="mt-32 text-center font-bebas text-5xl text-textLight dark:text-textDark"
   >
     Search Better
   </div>
