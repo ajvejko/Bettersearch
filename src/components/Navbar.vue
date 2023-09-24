@@ -114,7 +114,7 @@ onClickOutside(navbar, () => (show.value = false));
       </div>
       <!-- Navigation options -->
       <Transition name="slide-fade">
-        <div v-if="show" class="mt-3 flex flex-col px-3 pb-3 text-right">
+        <div v-if="show" class="mt-3 flex flex-col px-3 pb-3 text-right bg-backgroundLight/90 dark:bg-backgroundDark/90">
           <span class="mx-3 mt-1">
             <a
               @click="show = !show"

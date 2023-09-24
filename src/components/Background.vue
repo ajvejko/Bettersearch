@@ -2,7 +2,7 @@
 <template>
   <!-- Background -->
   <div
-    class="relative top-0 -z-10 flex h-screen w-screen items-center justify-center bg-background"
+    class="absolute top-0 -z-10 flex h-screen w-screen items-center justify-center bg-background"
   >
     <div
       class="animate-blob absolute right-[33%] h-72 w-72 rounded-full bg-yellow-300 opacity-70 mix-blend-multiply blur-2xl filter"
