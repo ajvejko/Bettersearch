@@ -8,6 +8,7 @@ const inputFocused = ref(true);
     <div class="flex">
       <input
         autofocus
+        type="text"
         @focus="inputFocused = true"
         @focusout="inputFocused = false"
         placeholder="Search the web"

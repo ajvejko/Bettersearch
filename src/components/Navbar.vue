@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useDark, useToggle, onClickOutside } from "@vueuse/core";
+import { windowStore } from "../stores/windowStores";
 
 const show = ref(false);
 const isDark = useDark();
@@ -13,13 +14,17 @@ onClickOutside(navbar, () => (show.value = false));
 
 <template>
   <nav>
-    <div ref="navbar" class="fixed left-0 right-0 top-0 z-10">
+    <div
+      ref="navbar"
+      class="fixed left-0 right-0 top-0 z-10"
+      :class="windowStore.AddWindow ? 'z-0' : ''"
+    >
       <div
-        class="bg-backgroundLight/60 flex justify-between px-6 py-2 backdrop-blur-[10px] dark:bg-backgroundDark/60"
+        class="flex justify-between bg-backgroundLight/60 px-6 py-2 backdrop-blur-[10px] dark:bg-backgroundDark/60"
       >
         <a
           href="#home"
-          class="text-textLight bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text font-bebas text-2xl text-transparent md:text-2xl"
+          class="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text font-bebas text-2xl text-textLight text-transparent md:text-2xl"
           >BetterSearch</a
         >
         <!-- Light/Dark mode button -->
@@ -114,7 +119,10 @@ onClickOutside(navbar, () => (show.value = false));
       </div>
       <!-- Navigation options -->
       <Transition name="slide-fade">
-        <div v-if="show" class="mt-3 flex flex-col px-3 pb-3 text-right bg-backgroundLight/90 dark:bg-backgroundDark/90">
+        <div
+          v-if="show"
+          class="mt-3 flex flex-col bg-backgroundLight/90 px-3 pb-3 text-right dark:bg-backgroundDark/90"
+        >
           <span class="mx-3 mt-1">
             <a
               @click="show = !show"

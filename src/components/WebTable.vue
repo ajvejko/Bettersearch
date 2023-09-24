@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { windowStore } from "../stores/windowStores";
-
+import WebAdd from "./WebAdd.vue";
 </script>
 
 <template>
@@ -17,4 +17,5 @@ import { windowStore } from "../stores/windowStores";
       </button>
     </div>
   </div>
+  <WebAdd v-if="windowStore.AddWindow" />
 </template>
