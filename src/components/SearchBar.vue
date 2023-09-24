@@ -1,14 +1,26 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from "vue";
+
+const inputFocused = ref(true);
+console.log(inputFocused.value);
+</script>
 <template>
   <div class="mx-auto mt-10 w-[80%]">
     <div class="flex">
       <input
         autofocus
+        @focus="inputFocused = true"
+        @focusout="inputFocused = false"
         placeholder="Search the web"
-        class="placeholder:text-textLight w-full rounded-l-full border-2 border-backgroundDark/50 bg-white/60 px-5 py-3 text-xl outline-none backdrop-blur-xl dark:border-white/50 dark:bg-black/50 dark:placeholder:text-textDark"
+        class="placeholder:text-textLight placeholder:font-inter text-textLight w-full rounded-l-full border-2 border-r-0 border-black/80 bg-white/60 px-5 py-2 text-xl outline-none focus:bg-white/90 dark:border-white/50 dark:bg-black/50 dark:text-textDark dark:placeholder:text-textDark dark:focus:bg-black/70"
       />
       <button
-        class="items-center rounded-r-full border-y-2 border-r-2 border-black’/50 bg-white/60 px-3 backdrop-blur-xl dark:border-white/50 dark:bg-black/50 dark:stroke-textDark"
+        class="items-center rounded-r-full border-y-2 border-r-2 border-black/80 bg-white/60 px-3 dark:border-white/50 dark:bg-black/50"
+        :class="
+          inputFocused
+            ? 'bg-white/90 dark:bg-black/70'
+            : ''
+        "
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -16,7 +28,6 @@
           height="24"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="currentColor"
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"

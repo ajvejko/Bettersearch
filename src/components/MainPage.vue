@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import SearchBar from "./SearchBar.vue";
+import WebTable from "./WebTable.vue";
 </script>
 
 <template>
@@ -9,4 +10,5 @@ import SearchBar from "./SearchBar.vue";
     Search Better
   </div>
   <SearchBar />
+  <WebTable />
 </template>
