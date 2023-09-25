@@ -15,7 +15,7 @@ onClickOutside(navbar, () => (show.value = false));
   <nav>
     <div ref="navbar" class="fixed left-0 right-0 top-0 z-10">
       <div
-        class="flex justify-between bg-backgroundLight/60 px-6 py-2 backdrop-blur-[10px] dark:bg-backgroundDark/60"
+        class="flex justify-between bg-backgroundLight/60 px-4 pb-2 pt-3 backdrop-blur-[10px] dark:bg-backgroundDark/60"
       >
         <a
           href="#home"

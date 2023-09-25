@@ -1,7 +1,13 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import { windowStore } from "../stores/windowStores";
+import { onClickOutside } from "@vueuse/core";
+
 import BaseModal from "./BaseModal.vue";
 import WebAdd from "./WebAdd.vue";
+
+const webAdd = ref(null);
+onClickOutside(webAdd, () => (windowStore.AddWindow = false));
 </script>
 
 <template>
@@ -12,7 +18,7 @@ import WebAdd from "./WebAdd.vue";
     <div class="flex flex-wrap justify-center">
       <button
         @click="windowStore.showAddWindow"
-        class="mt-4 rounded-xl border-2 border-black bg-black/5 px-2 pb-0.5 font-bold text-rose-600 shadow-[0_0px_5px_rgba(0,0,0,0.25)] hover:bg-black/10 active:shadow-black dark:border-white dark:bg-white/5 dark:active:shadow-white"
+        class="mt-4 rounded-xl border-2 border-black bg-black/5 px-2 pb-0.5 font-bold text-rose-600 shadow-[0_0px_5px_rgba(0,0,0,0.25)] hover:bg-black/10 active:shadow-black dark:border-white dark:bg-white/5 dark:hover:bg-white/10 dark:active:shadow-white"
       >
         +
       </button>
@@ -22,7 +28,7 @@ import WebAdd from "./WebAdd.vue";
   <Transition name="fade">
     <BaseModal class="modal" v-show="windowStore.AddWindow">
       <Transition name="bounce">
-        <WebAdd v-if="windowStore.AddWindow" />
+        <WebAdd ref="webAdd" v-if="windowStore.AddWindow" />
       </Transition>
     </BaseModal>
   </Transition>
