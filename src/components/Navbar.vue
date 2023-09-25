@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useDark, useToggle, onClickOutside } from "@vueuse/core";
-import { windowStore } from "../stores/windowStores";
 
 const show = ref(false);
 const isDark = useDark();
@@ -14,11 +13,7 @@ onClickOutside(navbar, () => (show.value = false));
 
 <template>
   <nav>
-    <div
-      ref="navbar"
-      class="fixed left-0 right-0 top-0 z-10"
-      :class="windowStore.AddWindow ? 'z-0' : ''"
-    >
+    <div ref="navbar" class="fixed left-0 right-0 top-0 z-10">
       <div
         class="flex justify-between bg-backgroundLight/60 px-6 py-2 backdrop-blur-[10px] dark:bg-backgroundDark/60"
       >
