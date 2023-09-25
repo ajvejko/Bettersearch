@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { windowStore } from "../stores/windowStores";
+import BaseModal from "./BaseModal.vue";
 import WebAdd from "./WebAdd.vue";
 </script>
 
@@ -11,11 +12,40 @@ import WebAdd from "./WebAdd.vue";
     <div class="flex flex-wrap justify-center">
       <button
         @click="windowStore.showAddWindow"
-        class="mt-4 rounded-xl border-2 border-black bg-black/5 px-2 pb-0.5 font-bold text-rose-600 shadow-[0_0px_5px_rgba(0,0,0,0.25)] active:shadow-black hover:bg-black/10 dark:border-white dark:bg-white/5 dark:active:shadow-white"
+        class="mt-4 rounded-xl border-2 border-black bg-black/5 px-2 pb-0.5 font-bold text-rose-600 shadow-[0_0px_5px_rgba(0,0,0,0.25)] hover:bg-black/10 active:shadow-black dark:border-white dark:bg-white/5 dark:active:shadow-white"
       >
         +
       </button>
     </div>
   </div>
-  <WebAdd v-if="windowStore.AddWindow" />
+  <!-- v-show so Transition component is not removed from DOM and so animation works -->
+  <Transition name="fade">
+    <BaseModal class="modal" v-show="windowStore.AddWindow">
+      <Transition name="bounce">
+        <WebAdd v-if="windowStore.AddWindow" />
+      </Transition>
+    </BaseModal>
+  </Transition>
 </template>
+
+<style scoped>
+.bounce-enter-from,
+.bounce-leave-to {
+  scale: 0;
+}
+
+.bounce-enter-active,
+.bounce-leave-active {
+  transition: all 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s ease;
+}
+</style>

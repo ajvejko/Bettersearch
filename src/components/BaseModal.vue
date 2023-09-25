@@ -1,8 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { windowStore } from "@/stores/windowStores";
+</script>
 
 <template>
   <div
-    class="z-20 absolute left-0 top-0 flex h-screen w-screen items-center justify-center bg-black/50"
+    class="absolute left-0 top-0 z-20 flex h-screen w-screen items-center justify-center bg-black/50"
   >
     <slot> </slot>
   </div>

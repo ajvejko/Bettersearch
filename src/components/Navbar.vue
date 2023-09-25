@@ -148,7 +148,7 @@ onClickOutside(navbar, () => (show.value = false));
   </nav>
 </template>
 
-<style>
+<style scoped>
 .slide-fade-enter-active,
 .slide-fade-leave-active {
   transition: 0.3s ease;

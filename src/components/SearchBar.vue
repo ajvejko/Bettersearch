@@ -31,7 +31,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .input-search:focus ~ .search-button {
   @apply bg-white/90 dark:bg-black/70;
 }
