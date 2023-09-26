@@ -16,15 +16,16 @@ export const buttonStore = reactive({
     this.homeURL = "";
     this.searchURL = "";
   },
-  toggleButton(name: string, home: string, search: string): void {
+  toggleButton(name: string, homeURL: string, searchURL: string): void {
     if (this.name === name) {
       this.name = "";
       this.homeURL = "";
       this.searchURL = "";
     } else {
+      console.log(name, homeURL, searchURL);
       this.name = name;
-      this.homeURL = home;
-      this.searchURL = search;
+      this.homeURL = homeURL;
+      this.searchURL = searchURL;
     }
   },
   editButton(): void {},
