@@ -32,7 +32,7 @@ onClickOutside(webAdd, () => (windowStore.AddWindow = false));
       />
       <button
         @click="windowStore.showAddWindow"
-        class="mt-4 rounded-xl border-2 border-black bg-black/5 px-2 pb-0.5 font-bold text-rose-600 shadow-[0_0px_5px_rgba(0,0,0,0.25)] hover:bg-black/10 active:shadow-black dark:border-white dark:bg-white/5 dark:hover:bg-white/10 dark:active:shadow-white"
+        class="mt-2 rounded-xl border-2 border-black bg-black/5 px-2 pb-0.5 font-bold text-rose-600 shadow-[0_0px_5px_rgba(0,0,0,0.25)] hover:bg-black/10 active:shadow-black dark:border-white dark:bg-white/5 dark:hover:bg-white/10 dark:active:shadow-white"
       >
         +
       </button>
