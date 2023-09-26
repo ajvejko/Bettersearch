@@ -22,6 +22,13 @@ onClickOutside(webAdd, () => (windowStore.AddWindow = false));
         v-for="(button, index) in buttonStore.buttonList"
         :name="button.name"
         :key="index"
+        @toggle="
+          buttonStore.toggleButton(
+            button.name,
+            button.homeURL,
+            button.searchURL,
+          )
+        "
       />
       <button
         @click="windowStore.showAddWindow"
