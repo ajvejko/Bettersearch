@@ -2,7 +2,7 @@ import { reactive } from "vue";
 
 export const windowStore = reactive({
   AddWindow: false,
-  showAddWindow() {
+  showAddWindow(): void {
     this.AddWindow = !this.AddWindow;
   },
 });

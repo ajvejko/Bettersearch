@@ -7,7 +7,9 @@ import { onMounted } from "vue";
 
 //Everytime site loads, sets the list value from localStorage
 onMounted(() => {
-  buttonStore.buttonList = JSON.parse(localStorage.getItem("links") || "[]");
+  buttonStore.buttonList = JSON.parse(
+    localStorage.getItem("buttonList") || "[]",
+  );
 });
 </script>
 

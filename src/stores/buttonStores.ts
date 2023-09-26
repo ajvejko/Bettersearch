@@ -5,7 +5,7 @@ export const buttonStore = reactive({
   name: "",
   homeURL: "",
   searchURL: "",
-  addButton() {
+  addButton(): void {
     this.buttonList.push({
       name: this.name,
       homeURL: this.homeURL,
@@ -13,6 +13,6 @@ export const buttonStore = reactive({
     });
     localStorage.setItem("buttonList", JSON.stringify(this.buttonList));
   },
-  toggleButton() {},
-  editButton() {},
+  toggleButton(): void {},
+  editButton(): void {},
 });
