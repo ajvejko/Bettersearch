@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import BaseModal from "./BaseModal.vue";
 import { windowStore } from "../stores/windowStores";
+import { buttonStore } from "../stores/buttonStores";
 </script>
 
 <template>
@@ -38,6 +39,7 @@ import { windowStore } from "../stores/windowStores";
       <input
         type="text"
         required
+        v-model="buttonStore.name"
         class="input border-b-2 bg-transparent font-inter outline-none valid:border-black focus:border-black/50 dark:border-white/50 dark:text-textDark dark:valid:border-white dark:focus:border-white"
       />
       <span
@@ -51,6 +53,7 @@ import { windowStore } from "../stores/windowStores";
       <input
         type="text"
         required
+        v-model="buttonStore.homeURL"
         class="input border-b-2 bg-transparent font-inter outline-none valid:border-black focus:border-black/50 dark:border-white/50 dark:text-textDark dark:valid:border-white dark:focus:border-white"
       />
       <span
@@ -64,6 +67,7 @@ import { windowStore } from "../stores/windowStores";
       <input
         type="text"
         required
+        v-model="buttonStore.searchURL"
         class="input border-b-2 bg-transparent font-inter outline-none valid:border-black focus:border-black/50 dark:border-white/50 dark:text-textDark dark:valid:border-white dark:focus:border-white"
       />
       <span
@@ -73,7 +77,11 @@ import { windowStore } from "../stores/windowStores";
       </span>
     </div>
     <button
-      type="submit"
+      type="button"
+      @click="
+        buttonStore.addButton();
+        windowStore.showAddWindow();
+      "
       class="translate-y-[80%] rounded-lg border-2 border-black bg-white px-3 font-bebas text-2xl text-rose-600 hover:border-rose-600 active:border-rose-600 dark:border-white dark:bg-backgroundDark dark:hover:border-rose-600 dark:active:border-rose-600"
     >
       Add Button
