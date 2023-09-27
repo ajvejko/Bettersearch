@@ -9,6 +9,7 @@ import WebButton from "./WebButton.vue";
 import { buttonStore } from "@/stores/buttonStores";
 
 const webAdd = ref(null);
+
 onClickOutside(webAdd, () => (windowStore.AddWindow = false));
 </script>
 
