@@ -2,18 +2,14 @@ import { reactive, ref } from "vue";
 
 export const focusInput = ref(false);
 
-export const focus = () => {
-  focusInput.value = true;
-};
-
-export const blur = () => {
-  focusInput.value = false;
+const changeFocus = () => {
+  focusInput.value = !focusInput.value;
 };
 
 export const buttonStore = reactive({
   name: "",
   homeURL: "",
-  searchURL: "",
+  searchURL: "https://www.google.com/search?q=",
   buttonList: [] as { name: string; homeURL: string; searchURL: string }[],
   addButton(): void {
     this.buttonList.push({
@@ -28,12 +24,12 @@ export const buttonStore = reactive({
   },
   toggleButton(name: string, homeURL: string, searchURL: string): void {
     if (this.name === name) {
-      blur();
+      changeFocus();
       this.name = "";
       this.homeURL = "";
-      this.searchURL = "";
+      this.searchURL = "https://www.google.com/search?q=";
     } else {
-      focus();
+      changeFocus();
       this.name = name;
       this.homeURL = homeURL;
       this.searchURL = searchURL;

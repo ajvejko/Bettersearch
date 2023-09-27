@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import BaseModal from "./BaseModal.vue";
 import { windowStore } from "../stores/windowStores";
 import { buttonStore } from "../stores/buttonStores";
 </script>
