@@ -7,9 +7,7 @@ const searchInput = ref<HTMLElement | null>(null);
 
 // Focus input when button is clicked
 watch(focusInput, () => {
-  if (focusInput.value) {
-    searchInput.value?.focus();
-  }
+  searchInput.value?.focus();
 });
 
 // Searching function
