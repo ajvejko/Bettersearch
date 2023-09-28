@@ -1,6 +1,12 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import { windowStore } from "../stores/windowStores";
 import { buttonStore } from "../stores/buttonStores";
+
+//creating reactive states for values from input
+const name = ref("");
+const homeURL = ref("");
+const searchURL = ref("");
 </script>
 
 <template>
@@ -38,7 +44,7 @@ import { buttonStore } from "../stores/buttonStores";
       <input
         type="text"
         required
-        v-model="buttonStore.name"
+        v-model="name"
         class="input border-b-2 bg-transparent font-inter outline-none valid:border-black focus:border-black/50 dark:border-white/50 dark:text-textDark dark:valid:border-white dark:focus:border-white"
       />
       <span
@@ -52,7 +58,7 @@ import { buttonStore } from "../stores/buttonStores";
       <input
         type="text"
         required
-        v-model="buttonStore.homeURL"
+        v-model="homeURL"
         class="input border-b-2 bg-transparent font-inter outline-none valid:border-black focus:border-black/50 dark:border-white/50 dark:text-textDark dark:valid:border-white dark:focus:border-white"
       />
       <span
@@ -66,7 +72,7 @@ import { buttonStore } from "../stores/buttonStores";
       <input
         type="text"
         required
-        v-model="buttonStore.searchURL"
+        v-model="searchURL"
         class="input border-b-2 bg-transparent font-inter outline-none valid:border-black focus:border-black/50 dark:border-white/50 dark:text-textDark dark:valid:border-white dark:focus:border-white"
       />
       <span
@@ -78,7 +84,7 @@ import { buttonStore } from "../stores/buttonStores";
     <button
       type="button"
       @click="
-        buttonStore.addButton();
+        buttonStore.addButton(name, homeURL, searchURL);
         windowStore.showAddWindow();
       "
       class="translate-y-[80%] rounded-lg border-2 border-black bg-white px-3 font-bebas text-2xl text-rose-600 hover:border-rose-600 active:border-rose-600 dark:border-white dark:bg-backgroundDark dark:hover:border-rose-600 dark:active:border-rose-600"

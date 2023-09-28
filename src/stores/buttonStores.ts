@@ -11,16 +11,13 @@ export const buttonStore = reactive({
   homeURL: "",
   searchURL: "https://www.google.com/search?q=",
   buttonList: [] as { name: string; homeURL: string; searchURL: string }[],
-  addButton(): void {
+  addButton(name: string, homeURL: string, searchURL: string): void {
     this.buttonList.push({
-      name: this.name,
-      homeURL: this.homeURL,
-      searchURL: this.searchURL,
+      name: name,
+      homeURL: homeURL,
+      searchURL: searchURL,
     });
     localStorage.setItem("buttonList", JSON.stringify(this.buttonList));
-    this.name = "";
-    this.homeURL = "";
-    this.searchURL = "";
   },
   toggleButton(name: string, homeURL: string, searchURL: string): void {
     if (this.name === name) {
