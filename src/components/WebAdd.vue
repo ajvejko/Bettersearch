@@ -15,8 +15,8 @@ const searchURL = ref("");
   >
     <button
       type="button"
-      @click="windowStore.showAddWindow"
-      class="close-button absolute right-0 top-0 translate-x-[40%] translate-y-[-40%] rounded-lg border-2 border-black bg-white text-rose-600 shadow-black hover:border-rose-600 active:border-rose-600 dark:border-white dark:bg-backgroundDark dark:hover:border-rose-600 dark:active:border-rose-600"
+      @click="windowStore.showModal"
+      class="absolute right-0 top-0 translate-x-[40%] translate-y-[-40%] rounded-lg border-2 border-black bg-white text-rose-600 shadow-black hover:border-rose-600 active:border-rose-600 dark:border-white dark:bg-backgroundDark dark:hover:border-rose-600 dark:active:border-rose-600"
     >
       <!-- X icon -->
       <svg
@@ -85,7 +85,7 @@ const searchURL = ref("");
       type="button"
       @click="
         buttonStore.addButton(name, homeURL, searchURL);
-        windowStore.showAddWindow();
+        windowStore.showModal;
       "
       class="translate-y-[80%] rounded-lg border-2 border-black bg-white px-3 font-bebas text-2xl text-rose-600 hover:border-rose-600 active:border-rose-600 dark:border-white dark:bg-backgroundDark dark:hover:border-rose-600 dark:active:border-rose-600"
     >
