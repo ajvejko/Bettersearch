@@ -59,11 +59,11 @@ const searchURL = ref(buttonStore.searchURL);
       </svg>
     </button>
     <div class="text-left">
-      <div
+      <h1
         class="mt-2 bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-center font-bebas text-4xl text-transparent"
       >
         Edit a Website
-      </div>
+      </h1>
       <div class="relative mt-8">
         <input
           type="text"

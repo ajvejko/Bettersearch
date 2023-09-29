@@ -11,6 +11,7 @@ import WebButton from "./WebButton.vue";
 
 const webAdd = ref(null);
 const webEdit = ref(null);
+const websitesHeader = ref("Websites");
 
 onClickOutside(webEdit, () => (windowStore.EditWindow = false));
 </script>
@@ -18,9 +19,9 @@ onClickOutside(webEdit, () => (windowStore.EditWindow = false));
 <template>
   <div class="mx-auto w-[80%] text-center">
     <div class="mt-20 flex justify-center">
-      <div class="font-bebas text-4xl text-textLight dark:text-textDark">
-        Websites
-      </div>
+      <h2 class="font-bebas text-4xl text-textLight dark:text-textDark">
+        {{ windowStore.EditMode ? "Editing" : websitesHeader }}
+      </h2>
 
       <!-- Edit button -->
       <button class="ml-1" @click="windowStore.switchEditMode">
@@ -30,7 +31,7 @@ onClickOutside(webEdit, () => (windowStore.EditWindow = false));
           height="22"
           viewBox="0 0 24 24"
           fill="none"
-          stroke-width="2"
+          stroke-width="2.5"
           stroke-linecap="round"
           stroke-linejoin="round"
           class="stroke-rose-600"
@@ -49,7 +50,6 @@ onClickOutside(webEdit, () => (windowStore.EditWindow = false));
         v-for="(button, index) in buttonStore.buttonList"
         :name="button.name"
         :key="index"
-        :class="windowStore.EditMode ? 'border-rose-600’' : ''"
         @click="
           windowStore.EditMode
             ? windowStore.showModal(
