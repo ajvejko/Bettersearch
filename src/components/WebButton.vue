@@ -1,6 +1,7 @@
 <script setup lang="ts">
 defineProps(["name", "homeURL", "searchURL"]);
 import { buttonStore } from "../stores/buttonStores";
+import { windowStore } from "@/stores/windowStores";
 </script>
 
 <template>

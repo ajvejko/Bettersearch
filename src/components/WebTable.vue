@@ -21,6 +21,7 @@ onClickOutside(webEdit, () => (windowStore.EditWindow = false));
       <div class="font-bebas text-4xl text-textLight dark:text-textDark">
         Websites
       </div>
+
       <!-- Edit button -->
       <button class="ml-1" @click="windowStore.switchEditMode">
         <svg
@@ -48,6 +49,7 @@ onClickOutside(webEdit, () => (windowStore.EditWindow = false));
         v-for="(button, index) in buttonStore.buttonList"
         :name="button.name"
         :key="index"
+        :class="windowStore.EditMode ? 'border-rose-600’' : ''"
         @click="
           windowStore.EditMode
             ? windowStore.showModal(
@@ -107,5 +109,20 @@ onClickOutside(webEdit, () => (windowStore.EditWindow = false));
 .fade-enter-active,
 .fade-leave-active {
   transition: all 0.5s ease;
+}
+
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.2s ease-out;
+}
+
+.slide-up-enter-from {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(12px);
 }
 </style>
