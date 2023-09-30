@@ -10,7 +10,7 @@ const searchURL = ref(buttonStore.searchURL);
 </script>
 <template>
   <form
-    class="relative rounded-lg bg-backgroundLight px-4 py-3 text-center shadow-[0_0px_15px_rgba(0,0,0,0.7)] dark:bg-backgroundDark dark:shadow-white md:w-1/2"
+    class="relative max-w-lg rounded-lg bg-backgroundLight px-4 py-3 text-center shadow-[0_0px_15px_rgba(0,0,0,0.7)] dark:bg-backgroundDark dark:shadow-white md:w-1/2 lg:px-6"
   >
     <button
       type="button"
@@ -28,7 +28,7 @@ const searchURL = ref(buttonStore.searchURL);
         stroke-width="2.5"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="h-6 w-6 scale-75 stroke-rose-600 md:h-8 md:w-8"
+        class="h-6 w-6 scale-75 stroke-primary md:h-8 md:w-8 lg:h-9 lg:w-9"
       >
         <polyline points="3 6 5 6 21 6"></polyline>
         <path
@@ -50,14 +50,14 @@ const searchURL = ref(buttonStore.searchURL);
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="h-6 w-6 stroke-rose-600 md:h-8 md:w-8"
+        class="h-6 w-6 stroke-primary md:h-8 md:w-8 lg:h-9 lg:w-9"
       >
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg>
     </button>
     <h1
-      class="mt-2 bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text font-bebas text-4xl text-transparent md:text-5xl"
+      class="mt-2 bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text font-bebas text-4xl text-transparent md:text-5xl lg:mt-3 lg:text-6xl"
     >
       Edit a Website
     </h1>
@@ -67,7 +67,7 @@ const searchURL = ref(buttonStore.searchURL);
           type="text"
           required
           v-model="name"
-          class="input border-b-2 bg-transparent font-inter outline-none valid:border-black focus:border-black/50 dark:border-white/50 dark:text-textDark dark:valid:border-white dark:focus:border-white md:w-full md:text-xl"
+          class="input w-full border-b-2 bg-transparent font-inter outline-none valid:border-black focus:border-black/50 dark:border-white/50 dark:text-textDark dark:valid:border-white dark:focus:border-white md:text-xl"
         />
         <span
           class="title pointer-events-none absolute left-0 top-0 text-left font-bebas text-2xl text-textLight/60 dark:text-textDark/60 md:text-3xl"
@@ -81,7 +81,7 @@ const searchURL = ref(buttonStore.searchURL);
           type="text"
           required
           v-model="homeURL"
-          class="input border-b-2 bg-transparent font-inter outline-none valid:border-black focus:border-black/50 dark:border-white/50 dark:text-textDark dark:valid:border-white dark:focus:border-white md:w-full md:text-xl"
+          class="input w-full border-b-2 bg-transparent font-inter outline-none valid:border-black focus:border-black/50 dark:border-white/50 dark:text-textDark dark:valid:border-white dark:focus:border-white md:text-xl"
         />
         <span
           class="title pointer-events-none absolute left-0 top-0 text-left font-bebas text-2xl text-textLight/60 dark:text-textDark/60 md:text-3xl"
@@ -95,7 +95,7 @@ const searchURL = ref(buttonStore.searchURL);
           type="text"
           required
           v-model="searchURL"
-          class="input border-b-2 bg-transparent font-inter outline-none valid:border-black focus:border-black/50 dark:border-white/50 dark:text-textDark dark:valid:border-white dark:focus:border-white md:w-full md:text-xl"
+          class="input w-full border-b-2 bg-transparent font-inter outline-none valid:border-black focus:border-black/50 dark:border-white/50 dark:text-textDark dark:valid:border-white dark:focus:border-white md:text-xl"
         />
         <span
           class="title pointer-events-none absolute left-0 top-0 text-left font-bebas text-2xl text-textLight/60 dark:text-textDark/60 md:text-3xl"

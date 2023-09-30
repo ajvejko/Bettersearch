@@ -19,7 +19,7 @@ onClickOutside(navbar, () => (show.value = false));
       >
         <a
           href="#home"
-          class="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text font-bebas text-2xl text-textLight text-transparent md:text-3xl"
+          class="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text font-bebas text-2xl text-textLight text-transparent md:text-3xl lg:text-4xl"
           >BetterSearch</a
         >
 
@@ -37,7 +37,7 @@ onClickOutside(navbar, () => (show.value = false));
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="h-6 w-6 stroke-blue-500 hover:stroke-blue-700 md:h-7 md:w-7"
+                class="h-6 w-6 stroke-blue-500 hover:stroke-blue-700 md:h-7 md:w-7 lg:h-8 lg:w-8"
               >
                 <path
                   d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
@@ -52,7 +52,7 @@ onClickOutside(navbar, () => (show.value = false));
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="h-6 w-6 stroke-yellow-400 hover:stroke-yellow-500 md:h-7 md:w-7"
+                class="h-6 w-6 stroke-yellow-400 hover:stroke-yellow-500 md:h-7 md:w-7 lg:h-8 lg:w-8"
               >
                 <circle cx="12" cy="12" r="5"></circle>
                 <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -67,10 +67,7 @@ onClickOutside(navbar, () => (show.value = false));
             </Transition>
           </button>
           <!-- Navigation menu button -->
-          <button
-            @click="show = !show"
-            class="text-xl dark:text-textDark md:text-2xl"
-          >
+          <button @click="show = !show" class="dark:text-textDark">
             <!-- Hamburger menu icon -->
             <svg
               v-if="!show"
@@ -80,7 +77,7 @@ onClickOutside(navbar, () => (show.value = false));
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="h-6 w-6 stroke-textLight dark:stroke-textDark md:h-7 md:w-7"
+              class="h-6 w-6 stroke-textLight dark:stroke-textDark md:h-7 md:w-7 lg:h-8 lg:w-8"
             >
               <line x1="21" y1="10" x2="7" y2="10"></line>
               <line x1="21" y1="6" x2="3" y2="6"></line>
@@ -96,7 +93,7 @@ onClickOutside(navbar, () => (show.value = false));
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="h-6 w-6 stroke-textLight dark:stroke-textDark md:h-7 md:w-7"
+              class="h-6 w-6 stroke-textLight dark:stroke-textDark md:h-7 md:w-7 lg:h-8 lg:w-8"
             >
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -114,7 +111,7 @@ onClickOutside(navbar, () => (show.value = false));
             <a
               @click="show = !show"
               href="#about"
-              class="text-textLight hover:underline md:text-lg dark:text-textDark"
+              class="text-textLight hover:underline dark:text-textDark md:text-lg lg:text-xl"
               >Save & Copy buttons (WIP)</a
             >
           </span>
@@ -122,7 +119,7 @@ onClickOutside(navbar, () => (show.value = false));
             <a
               @click="show = !show"
               href="#projects"
-              class="text-textLight hover:underline md:text-lg dark:text-textDark"
+              class="text-textLight hover:underline dark:text-textDark md:text-lg lg:text-xl"
               >Button order (WIP)</a
             >
           </span>
@@ -130,7 +127,7 @@ onClickOutside(navbar, () => (show.value = false));
             <a
               @click="show = !show"
               href="#contact"
-              class="text-textLight hover:underline md:text-lg dark:text-textDark"
+              class="text-textLight hover:underline dark:text-textDark md:text-lg lg:text-xl"
               >Customize colours (WIP)</a
             >
           </span>
