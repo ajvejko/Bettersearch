@@ -11,69 +11,62 @@ import WebButton from "./WebButton.vue";
 
 const webAdd = ref(null);
 const webEdit = ref(null);
-const websitesHeader = ref("Websites");
 
 onClickOutside(webEdit, () => (windowStore.EditWindow = false));
 </script>
 
 <template>
-  <div class="mx-auto w-[80%] text-center">
-    <div class="mt-20 flex justify-center">
-      <h2 class="font-bebas text-4xl text-textLight dark:text-textDark">
-        <Transition name="fade" mode="out-in">
-          <span v-if="!windowStore.EditMode">Websites</span>
-          <span v-else>Editing...</span>
-        </Transition>
-      </h2>
+  <div class="mt-20 flex justify-center text-center">
+    <h2
+      class="font-bebas text-4xl text-textLight dark:text-textDark md:text-5xl"
+    >
+      <Transition name="fade" mode="out-in">
+        <span v-if="!windowStore.EditMode">Websites</span>
+        <span v-else>Editing...</span>
+      </Transition>
+    </h2>
 
-      <!-- Edit button -->
-      <button class="ml-1" @click="windowStore.switchEditMode">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="22"
-          height="22"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke-width="2.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="stroke-primary active:stroke-primary/30"
-        >
-          <path
-            d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
-          ></path>
-          <path
-            d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
-          ></path>
-        </svg>
-      </button>
-    </div>
-    <div class="flex flex-wrap justify-center">
-      <WebButton
-        v-for="(button, index) in buttonStore.buttonList"
-        :name="button.name"
-        :key="index"
-        @click="
-          windowStore.EditMode
-            ? windowStore.showModal(
-                button.name,
-                button.homeURL,
-                button.searchURL,
-              )
-            : buttonStore.toggleButton(
-                button.name,
-                button.homeURL,
-                button.searchURL,
-              )
-        "
-      />
-      <button
-        @click="windowStore.showModal()"
-        class="text-primary mt-2 rounded-xl border-2 border-black bg-black/5 px-2 pb-0.5 font-bold shadow-[0_0px_5px_rgba(0,0,0,0.25)] hover:bg-black/10 active:shadow-black dark:border-white dark:bg-white/5 dark:hover:bg-white/10 dark:active:shadow-white"
+    <!-- Edit button -->
+    <button class="ml-1" @click="windowStore.switchEditMode">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="h-6 w-6 stroke-primary active:stroke-primary/30 md:h-7 md:w-7"
       >
-        +
-      </button>
-    </div>
+        <path
+          d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+        ></path>
+        <path
+          d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+        ></path>
+      </svg>
+    </button>
+  </div>
+  <div class="flex flex-wrap justify-center">
+    <WebButton
+      v-for="(button, index) in buttonStore.buttonList"
+      :name="button.name"
+      :key="index"
+      @click="
+        windowStore.EditMode
+          ? windowStore.showModal(button.name, button.homeURL, button.searchURL)
+          : buttonStore.toggleButton(
+              button.name,
+              button.homeURL,
+              button.searchURL,
+            )
+      "
+    />
+    <button
+      @click="windowStore.showModal()"
+      class="mt-2 rounded-xl border-2 border-black bg-black/5 px-2 pb-0.5 font-bold text-primary shadow-[0_0px_5px_rgba(0,0,0,0.25)] hover:bg-black/10 active:shadow-black dark:border-white dark:bg-white/5 dark:hover:bg-white/10 dark:active:shadow-white"
+    >
+      +
+    </button>
   </div>
   <!-- v-show so Transition component is not removed from DOM and so animation works -->
   <Transition name="fade">

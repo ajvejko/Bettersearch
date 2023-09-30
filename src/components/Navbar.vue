@@ -19,26 +19,25 @@ onClickOutside(navbar, () => (show.value = false));
       >
         <a
           href="#home"
-          class="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text font-bebas text-2xl text-textLight text-transparent md:text-2xl"
+          class="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text font-bebas text-2xl text-textLight text-transparent md:text-3xl"
           >BetterSearch</a
         >
-        <!-- Light/Dark mode button -->
+
         <div class="itesm-center flex justify-center">
+          <!-- Light/Dark mode button -->
           <button @click="toggleDark()" class="mr-3">
             <!-- Moon icon -->
             <Transition name="slide-up" mode="out-in">
               <svg
                 v-if="isDark"
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="stroke-blue-500 hover:stroke-blue-700"
+                class="h-6 w-6 stroke-blue-500 hover:stroke-blue-700 md:h-7 md:w-7"
               >
                 <path
                   d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
@@ -48,14 +47,12 @@ onClickOutside(navbar, () => (show.value = false));
               <svg
                 v-else
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="stroke-yellow-400 hover:stroke-yellow-500"
+                class="h-6 w-6 stroke-yellow-400 hover:stroke-yellow-500 md:h-7 md:w-7"
               >
                 <circle cx="12" cy="12" r="5"></circle>
                 <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -69,7 +66,6 @@ onClickOutside(navbar, () => (show.value = false));
               </svg>
             </Transition>
           </button>
-
           <!-- Navigation menu button -->
           <button
             @click="show = !show"
@@ -79,14 +75,12 @@ onClickOutside(navbar, () => (show.value = false));
             <svg
               v-if="!show"
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="currentColor"
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
+              class="h-6 w-6 stroke-textLight dark:stroke-textDark md:h-7 md:w-7"
             >
               <line x1="21" y1="10" x2="7" y2="10"></line>
               <line x1="21" y1="6" x2="3" y2="6"></line>
@@ -97,14 +91,12 @@ onClickOutside(navbar, () => (show.value = false));
             <svg
               v-else
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="currentColor"
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
+              class="h-6 w-6 stroke-textLight dark:stroke-textDark md:h-7 md:w-7"
             >
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -116,30 +108,30 @@ onClickOutside(navbar, () => (show.value = false));
       <Transition name="slide-fade">
         <div
           v-if="show"
-          class="mt-3 flex flex-col bg-backgroundLight/90 px-3 pb-3 text-right dark:bg-backgroundDark/90"
+          class="flex flex-col bg-backgroundLight/90 px-3 pb-3 text-right dark:bg-backgroundDark/90"
         >
           <span class="mx-3 mt-1">
             <a
               @click="show = !show"
               href="#about"
-              class="text-textLight hover:underline dark:text-textDark"
-              >Save & Copy buttons</a
+              class="text-textLight hover:underline md:text-lg dark:text-textDark"
+              >Save & Copy buttons (WIP)</a
             >
           </span>
           <span class="mx-3 mt-1">
             <a
               @click="show = !show"
               href="#projects"
-              class="text-textLight hover:underline dark:text-textDark"
-              >Button order</a
+              class="text-textLight hover:underline md:text-lg dark:text-textDark"
+              >Button order (WIP)</a
             >
           </span>
           <span class="mx-3 mt-1">
             <a
               @click="show = !show"
               href="#contact"
-              class="text-textLight hover:underline dark:text-textDark"
-              >Customize colours</a
+              class="text-textLight hover:underline md:text-lg dark:text-textDark"
+              >Customize colours (WIP)</a
             >
           </span>
         </div>
