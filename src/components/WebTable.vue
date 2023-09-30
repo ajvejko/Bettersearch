@@ -16,6 +16,7 @@ onClickOutside(webEdit, () => (windowStore.EditWindow = false));
 </script>
 
 <template>
+  
   <div class="mt-20 flex justify-center text-center">
     <h2
       class="font-bebas text-4xl text-textLight dark:text-textDark md:text-5xl lg:text-5xl"
