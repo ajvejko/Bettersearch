@@ -16,7 +16,7 @@ const searchURL = ref("");
     <button
       type="button"
       @click="windowStore.showModal"
-      class="absolute right-0 top-0 translate-x-[40%] translate-y-[-40%] rounded-lg border-2 border-black bg-white text-rose-600 shadow-black hover:border-rose-600 active:border-rose-600 dark:border-white dark:bg-backgroundDark dark:hover:border-rose-600 dark:active:border-rose-600"
+      class="hover:border-primary active:border-primary dark:hover:border-primary dark:active:border-primary absolute right-0 top-0 translate-x-[40%] translate-y-[-40%] rounded-lg border-2 border-black bg-white shadow-black dark:border-white dark:bg-backgroundDark"
     >
       <!-- X icon -->
       <svg
@@ -29,7 +29,7 @@ const searchURL = ref("");
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="stroke-rose-600"
+        class="stroke-primary"
       >
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -87,7 +87,7 @@ const searchURL = ref("");
         buttonStore.addButton(name, homeURL, searchURL);
         windowStore.showModal;
       "
-      class="translate-y-[80%] rounded-lg border-2 border-black bg-white px-3 font-bebas text-2xl text-rose-600 hover:border-rose-600 active:border-rose-600 dark:border-white dark:bg-backgroundDark dark:hover:border-rose-600 dark:active:border-rose-600"
+      class="text-primary hover:border-primary active:border-primary dark:hover:border-primary dark:active:border-primary translate-y-[80%] rounded-lg border-2 border-black bg-white px-3 font-bebas text-2xl dark:border-white dark:bg-backgroundDark"
     >
       Add Button
     </button>

@@ -20,7 +20,10 @@ onClickOutside(webEdit, () => (windowStore.EditWindow = false));
   <div class="mx-auto w-[80%] text-center">
     <div class="mt-20 flex justify-center">
       <h2 class="font-bebas text-4xl text-textLight dark:text-textDark">
-        {{ windowStore.EditMode ? "Editing" : websitesHeader }}
+        <Transition name="fade" mode="out-in">
+          <span v-if="!windowStore.EditMode">Websites</span>
+          <span v-else>Editing...</span>
+        </Transition>
       </h2>
 
       <!-- Edit button -->
@@ -34,7 +37,7 @@ onClickOutside(webEdit, () => (windowStore.EditWindow = false));
           stroke-width="2.5"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="stroke-rose-600"
+          class="stroke-primary active:stroke-primary/30"
         >
           <path
             d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
@@ -66,7 +69,7 @@ onClickOutside(webEdit, () => (windowStore.EditWindow = false));
       />
       <button
         @click="windowStore.showModal()"
-        class="mt-2 rounded-xl border-2 border-black bg-black/5 px-2 pb-0.5 font-bold text-rose-600 shadow-[0_0px_5px_rgba(0,0,0,0.25)] hover:bg-black/10 active:shadow-black dark:border-white dark:bg-white/5 dark:hover:bg-white/10 dark:active:shadow-white"
+        class="text-primary mt-2 rounded-xl border-2 border-black bg-black/5 px-2 pb-0.5 font-bold shadow-[0_0px_5px_rgba(0,0,0,0.25)] hover:bg-black/10 active:shadow-black dark:border-white dark:bg-white/5 dark:hover:bg-white/10 dark:active:shadow-white"
       >
         +
       </button>
@@ -108,21 +111,6 @@ onClickOutside(webEdit, () => (windowStore.EditWindow = false));
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: all 0.5s ease;
-}
-
-.slide-up-enter-active,
-.slide-up-leave-active {
-  transition: all 0.2s ease-out;
-}
-
-.slide-up-enter-from {
-  opacity: 0;
-  transform: translateY(12px);
-}
-
-.slide-up-leave-to {
-  opacity: 0;
-  transform: translateY(12px);
+  transition: all 0.2s ease;
 }
 </style>

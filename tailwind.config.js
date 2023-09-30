@@ -11,15 +11,10 @@ module.exports = {
       colors: {
         textLight: "#010304",
         backgroundLight: "#ffffff",
-        primaryLight: "#532813",
-        secondaryLight: "#d7d7da",
-        accentLight: "#bd2e46",
+        primary: "#e11d48",
         // Dark mode variations
         textDark: "#f4f4f5",
         backgroundDark: "#030302",
-        primaryDark: "#532813",
-        secondaryDark: "#0c0c0d",
-        accentDark: "#e79da9",
       },
       animation: {
         blob: "blob 8s infinite",
