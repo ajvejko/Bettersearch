@@ -84,7 +84,7 @@ const searchURL = ref("");
       type="button"
       @click="
         buttonStore.addButton(name, homeURL, searchURL);
-        windowStore.showModal;
+        windowStore.showModal();
       "
       class="translate-y-[80%] rounded-lg border-2 border-black bg-white px-3 font-bebas text-2xl text-primary hover:border-primary active:border-primary dark:border-white dark:bg-backgroundDark dark:hover:border-primary dark:active:border-primary md:text-3xl lg:text-4xl"
     >
