@@ -5,21 +5,18 @@ export const windowStore = reactive({
   AddWindow: false,
   EditWindow: false,
   EditMode: false,
+  showAddModal(): void {
+    buttonStore.name = "";
+    buttonStore.homeURL = "";
+    buttonStore.searchURL = "";
+    this.AddWindow = !this.AddWindow;
+  },
 
-  showModal(name?: string, homeURL?: string, searchURL?: string): void {
-    if (!this.EditMode) {
-      buttonStore.name = "";
-      buttonStore.homeURL = "";
-      buttonStore.searchURL = "";
-      this.AddWindow = !this.AddWindow;
-    } else {
-      if (name && homeURL && searchURL) {
-        buttonStore.name = name;
-        buttonStore.homeURL = homeURL;
-        buttonStore.searchURL = searchURL;
-      }
-      this.EditWindow = !this.EditWindow;
-    }
+  showEditModal(name: string, homeURL: string, searchURL: string): void {
+    buttonStore.name = name;
+    buttonStore.homeURL = homeURL;
+    buttonStore.searchURL = searchURL;
+    this.EditWindow = !this.EditWindow;
   },
 
   switchEditMode(): void {

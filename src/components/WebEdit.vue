@@ -16,7 +16,7 @@ const searchURL = ref(buttonStore.searchURL);
       type="button"
       @click="
         buttonStore.deleteButton(name, homeURL, searchURL);
-        windowStore.showModal();
+        windowStore.showEditModal(name, homeURL, searchURL);
       "
       class="absolute left-0 top-0 translate-x-[-40%] translate-y-[-40%] rounded-lg border-2 border-black bg-white text-rose-600 shadow-black hover:border-rose-600 active:border-rose-600 dark:border-white dark:bg-backgroundDark dark:hover:border-rose-600 dark:active:border-rose-600"
     >
@@ -39,7 +39,7 @@ const searchURL = ref(buttonStore.searchURL);
 
     <button
       type="button"
-      @click="windowStore.showModal"
+      @click="windowStore.showEditModal(name, homeURL, searchURL)"
       class="absolute right-0 top-0 translate-x-[40%] translate-y-[-40%] rounded-lg border-2 border-black bg-white text-rose-600 shadow-black hover:border-rose-600 active:border-rose-600 dark:border-white dark:bg-backgroundDark dark:hover:border-rose-600 dark:active:border-rose-600"
     >
       <!-- X icon -->
@@ -108,7 +108,7 @@ const searchURL = ref(buttonStore.searchURL);
       type="button"
       @click="
         buttonStore.editButton(name, homeURL, searchURL);
-        windowStore.showModal();
+        windowStore.showEditModal(name, homeURL, searchURL);
       "
       class="translate-y-[80%] rounded-lg border-2 border-black bg-white px-3 font-bebas text-2xl text-primary hover:border-primary active:border-primary dark:border-white dark:bg-backgroundDark dark:hover:border-primary dark:active:border-primary md:text-3xl"
     >

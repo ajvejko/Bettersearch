@@ -16,7 +16,6 @@ onClickOutside(webEdit, () => (windowStore.EditWindow = false));
 </script>
 
 <template>
-  
   <div class="mt-20 flex justify-center text-center">
     <h2
       class="font-bebas text-4xl text-textLight dark:text-textDark md:text-5xl lg:text-5xl"
@@ -47,27 +46,33 @@ onClickOutside(webEdit, () => (windowStore.EditWindow = false));
       </svg>
     </button>
   </div>
-  <div class="flex flex-wrap justify-center">
-    <WebButton
-      v-for="(button, index) in buttonStore.buttonList"
-      :name="button.name"
-      :key="index"
-      @click="
-        windowStore.EditMode
-          ? windowStore.showModal(button.name, button.homeURL, button.searchURL)
-          : buttonStore.toggleButton(
-              button.name,
-              button.homeURL,
-              button.searchURL,
-            )
-      "
-    />
-    <button
-      @click="windowStore.showModal()"
-      class="mt-2 rounded-xl border-2 border-black bg-black/5 px-2 pb-0.5 font-bold text-primary shadow-[0_0px_5px_rgba(0,0,0,0.25)] hover:bg-black/10 active:shadow-black dark:border-white dark:bg-white/5 dark:hover:bg-white/10 dark:active:shadow-white"
-    >
-      +
-    </button>
+  <div class="flex flex-wrap justify-center px-3 text-center">
+    <div class="max-w-3xl">
+      <WebButton
+        v-for="(button, index) in buttonStore.buttonList"
+        :name="button.name"
+        :key="index"
+        @click="
+          windowStore.EditMode
+            ? windowStore.showEditModal(
+                button.name,
+                button.homeURL,
+                button.searchURL,
+              )
+            : buttonStore.toggleButton(
+                button.name,
+                button.homeURL,
+                button.searchURL,
+              )
+        "
+      />
+      <button
+        @click="windowStore.showAddModal()"
+        class="mt-2 rounded-xl border-2 border-black bg-black/5 px-2 pb-0.5 font-bold text-primary shadow-[0_0px_5px_rgba(0,0,0,0.25)] hover:bg-black/10 active:shadow-black dark:border-white dark:bg-white/5 dark:hover:bg-white/10 dark:active:shadow-white"
+      >
+        +
+      </button>
+    </div>
   </div>
   <!-- v-show so Transition component is not removed from DOM and so animation works -->
   <Transition name="fade">
