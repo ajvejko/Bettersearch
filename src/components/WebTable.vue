@@ -51,20 +51,9 @@ onClickOutside(webEdit, () => (windowStore.EditWindow = false));
       <WebButton
         v-for="(button, index) in buttonStore.buttonList"
         :name="button.name"
-        :key="index"
-        @click="
-          windowStore.EditMode
-            ? windowStore.showEditModal(
-                button.name,
-                button.homeURL,
-                button.searchURL,
-              )
-            : buttonStore.toggleButton(
-                button.name,
-                button.homeURL,
-                button.searchURL,
-              )
-        "
+        :homeURL="button.homeURL"
+        :searchURL="button.searchURL"
+        :index="index"
       />
       <button
         @click="windowStore.showAddModal()"

@@ -7,6 +7,7 @@ import { buttonStore } from "../stores/buttonStores";
 const name = ref(buttonStore.name);
 const homeURL = ref(buttonStore.homeURL);
 const searchURL = ref(buttonStore.searchURL);
+const index = ref(buttonStore.index);
 </script>
 <template>
   <form
@@ -15,8 +16,8 @@ const searchURL = ref(buttonStore.searchURL);
     <button
       type="button"
       @click="
-        buttonStore.deleteButton(name, homeURL, searchURL);
-        windowStore.showEditModal(name, homeURL, searchURL);
+        buttonStore.deleteButton();
+        windowStore.showEditModal(name, homeURL, searchURL, index);
       "
       class="absolute left-0 top-0 translate-x-[-40%] translate-y-[-40%] rounded-lg border-2 border-black bg-white text-rose-600 shadow-black hover:border-rose-600 active:border-rose-600 dark:border-white dark:bg-backgroundDark dark:hover:border-rose-600 dark:active:border-rose-600"
     >
@@ -39,7 +40,7 @@ const searchURL = ref(buttonStore.searchURL);
 
     <button
       type="button"
-      @click="windowStore.showEditModal(name, homeURL, searchURL)"
+      @click="windowStore.showEditModal(name, homeURL, searchURL, index)"
       class="absolute right-0 top-0 translate-x-[40%] translate-y-[-40%] rounded-lg border-2 border-black bg-white text-rose-600 shadow-black hover:border-rose-600 active:border-rose-600 dark:border-white dark:bg-backgroundDark dark:hover:border-rose-600 dark:active:border-rose-600"
     >
       <!-- X icon -->
@@ -107,8 +108,8 @@ const searchURL = ref(buttonStore.searchURL);
     <button
       type="button"
       @click="
-        buttonStore.editButton(name, homeURL, searchURL);
-        windowStore.showEditModal(name, homeURL, searchURL);
+        buttonStore.editButton(name, homeURL, searchURL, index);
+        windowStore.showEditModal(name, homeURL, searchURL, index);
       "
       class="translate-y-[80%] rounded-lg border-2 border-black bg-white px-3 font-bebas text-2xl text-primary hover:border-primary active:border-primary dark:border-white dark:bg-backgroundDark dark:hover:border-primary dark:active:border-primary md:text-3xl"
     >

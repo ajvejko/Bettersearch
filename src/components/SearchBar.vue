@@ -19,7 +19,6 @@ const search = (): void => {
   } else if (buttonStore.name && !input.value.trim()) {
     window.open(buttonStore.homeURL, "_self");
   } else {
-    console.log(buttonStore.name + input.value);
     window.open(buttonStore.searchURL + input.value, "_self");
   }
 };

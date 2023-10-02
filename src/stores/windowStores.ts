@@ -12,10 +12,16 @@ export const windowStore = reactive({
     this.AddWindow = !this.AddWindow;
   },
 
-  showEditModal(name: string, homeURL: string, searchURL: string): void {
+  showEditModal(
+    name: string,
+    homeURL: string,
+    searchURL: string,
+    index: number,
+  ): void {
     buttonStore.name = name;
     buttonStore.homeURL = homeURL;
     buttonStore.searchURL = searchURL;
+    buttonStore.index = index;
     this.EditWindow = !this.EditWindow;
   },
 
