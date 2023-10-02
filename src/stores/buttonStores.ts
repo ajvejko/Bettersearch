@@ -35,6 +35,7 @@ export const buttonStore = reactive({
     searchURL: string,
     index: number,
   ): void {
+    // Checks if the button is already selected
     if (this.index === index) {
       changeFocus();
       this.name = "";
@@ -70,9 +71,8 @@ export const buttonStore = reactive({
       return button;
     });
     this.buttonList = newButtonList;
-    console.log(index);
 
-    // Update the button list in local storage
+    // Updates the button list in local storage
     localStorage.setItem("buttonList", JSON.stringify(this.buttonList));
   },
 

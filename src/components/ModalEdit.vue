@@ -3,7 +3,7 @@ import { ref } from "vue";
 import { windowStore } from "../stores/windowStores";
 import { buttonStore } from "../stores/buttonStores";
 
-//creating reactive states for values from input
+// Create reactive states for values from input
 const name = ref(buttonStore.name);
 const homeURL = ref(buttonStore.homeURL);
 const searchURL = ref(buttonStore.searchURL);
