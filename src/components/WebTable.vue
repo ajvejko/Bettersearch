@@ -5,8 +5,8 @@ import { onClickOutside } from "@vueuse/core";
 import { buttonStore } from "@/stores/buttonStores";
 
 import BaseModal from "./BaseModal.vue";
-import WebAdd from "./WebAdd.vue";
-import WebEdit from "./WebEdit.vue";
+import ModalAdd from "./ModalAdd.vue";
+import ModalEdit from "./ModalEdit.vue";
 import WebButton from "./WebButton.vue";
 
 const webAdd = ref(null);
@@ -16,7 +16,7 @@ onClickOutside(webEdit, () => (windowStore.EditWindow = false));
 </script>
 
 <template>
-  <div class="mt-20 flex justify-center text-center">
+  <div class="mt-20 flex items-center justify-center">
     <h2
       class="font-bebas text-4xl text-textLight dark:text-textDark md:text-5xl lg:text-5xl"
     >
@@ -35,7 +35,7 @@ onClickOutside(webEdit, () => (windowStore.EditWindow = false));
         stroke-width="2.5"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="h-6 w-6 stroke-primary active:stroke-primary/30 md:h-7 md:w-7"
+        class="h-6 w-6 stroke-primary active:stroke-primary/50 md:h-7 md:w-7"
       >
         <path
           d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
@@ -68,7 +68,7 @@ onClickOutside(webEdit, () => (windowStore.EditWindow = false));
       />
       <button
         @click="windowStore.showAddModal()"
-        class="mt-2 rounded-xl border-2 border-black bg-black/5 px-2 pb-0.5 font-bold text-primary shadow-[0_0px_5px_rgba(0,0,0,0.25)] hover:bg-black/10 active:shadow-black dark:border-white dark:bg-white/5 dark:hover:bg-white/10 dark:active:shadow-white"
+        class="mt-2 rounded-xl border-2 border-black px-2 pb-0.5 font-inter font-bold text-primary shadow-[0_0px_5px_rgba(0,0,0,0.25)] hover:bg-white/10 active:shadow-black dark:border-white dark:bg-backgroundDark/5 dark:hover:bg-black/10 dark:active:shadow-white md:text-lg"
       >
         +
       </button>
@@ -78,7 +78,7 @@ onClickOutside(webEdit, () => (windowStore.EditWindow = false));
   <Transition name="fade">
     <BaseModal v-show="windowStore.AddWindow">
       <Transition name="bounce">
-        <WebAdd ref="webAdd" v-if="windowStore.AddWindow" />
+        <ModalAdd ref="webAdd" v-if="windowStore.AddWindow" />
       </Transition>
     </BaseModal>
   </Transition>
@@ -86,7 +86,7 @@ onClickOutside(webEdit, () => (windowStore.EditWindow = false));
   <Transition name="fade">
     <BaseModal v-show="windowStore.EditWindow">
       <Transition name="bounce">
-        <WebEdit ref="webEdit" v-if="windowStore.EditWindow" />
+        <ModalEdit ref="webEdit" v-if="windowStore.EditWindow" />
       </Transition>
     </BaseModal>
   </Transition>
