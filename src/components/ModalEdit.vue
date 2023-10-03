@@ -11,7 +11,7 @@ const index = ref(buttonStore.index);
 </script>
 <template>
   <form
-    class="relative max-w-lg rounded-lg bg-backgroundLight px-4 py-3 text-center shadow-[0_0px_15px_rgba(0,0,0,0.7)] dark:bg-backgroundDark dark:shadow-white md:w-1/2 lg:px-6"
+    class="relative w-3/4 max-w-lg rounded-lg bg-backgroundLight px-4 py-3 text-center shadow-[0_0px_15px_rgba(0,0,0,0.7)] dark:bg-backgroundDark dark:shadow-white md:w-1/2 lg:px-6"
   >
     <button
       type="button"
