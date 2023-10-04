@@ -4,13 +4,23 @@ import { windowStore } from "@/stores/windowStores";
 import { buttonStore } from "@/stores/buttonStores";
 import { ref } from "vue";
 
-const newButtonList = ref(localStorage.getItem("buttonList") || "");
+const newButtonList = ref(localStorage.getItem("buttonList") || "[]");
 const { copy, copied, isSupported } = useClipboard();
 
 const changeButtonList = () => {
-  buttonStore.buttonList = JSON.parse(newButtonList.value);
-  localStorage.setItem("buttonList", newButtonList.value);
-  windowStore.showCopyPasteModal();
+  if (newButtonList.value.trim() === "") {
+    // Handle empty JSON data
+    console.error("JSON data is empty, please paste the data.");
+    return;
+  }
+  try {
+    buttonStore.buttonList = JSON.parse(newButtonList.value);
+    localStorage.setItem("buttonList", newButtonList.value);
+    windowStore.showCopyPasteModal();
+  } catch (error) {
+    // Handle invalid JSON data
+    console.error("Invalid JSON data", error);
+  }
 };
 </script>
 <template>
@@ -76,7 +86,7 @@ const changeButtonList = () => {
     <textarea
       rows="12"
       v-model="newButtonList"
-      class="mt-3 w-full rounded-xl border resize-none overflow-clip bg-backgroundLight p-2 font-inter outline-none valid:border-black focus:border-black/50 dark:border-white/50 dark:bg-backgroundDark dark:text-textDark dark:valid:border-white dark:focus:border-white md:text-xl"
+      class="mt-3 w-full resize-none overflow-clip rounded-xl border bg-backgroundLight p-2 font-inter outline-none valid:border-black focus:border-black/50 dark:border-white/50 dark:bg-backgroundDark dark:text-textDark dark:valid:border-white dark:focus:border-white md:text-xl"
     ></textarea>
     <button
       type="button"
