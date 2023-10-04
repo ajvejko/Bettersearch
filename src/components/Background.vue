@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 <template>
   <!-- Background -->
-  <div class="flex absolute top-0 -z-10 h-screen w-screen">
+  <div class="absolute top-0 -z-10 flex h-screen w-screen overflow-hidden">
     <div
       class="absolute right-1/2 top-[25%] h-72 w-72 animate-blob rounded-full bg-yellow-300 opacity-70 mix-blend-multiply blur-2xl filter lg:h-96 lg:w-96"
     ></div>
