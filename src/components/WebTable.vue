@@ -12,6 +12,7 @@ import WebButton from "./WebButton.vue";
 const webAdd = ref(null);
 const webEdit = ref(null);
 
+onClickOutside(webAdd, () => (windowStore.AddWindow = false));
 onClickOutside(webEdit, () => (windowStore.EditWindow = false));
 </script>
 
