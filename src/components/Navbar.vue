@@ -1,143 +1,119 @@
 <script setup lang="ts">
-import { ref } from "vue";
 import { useDark, useToggle, onClickOutside } from "@vueuse/core";
 
-const show = ref(false);
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
-const navbar = ref(null);
-
-// On click outside of navbar, close the menu using VueUse
-onClickOutside(navbar, () => (show.value = false));
 </script>
 
 <template>
   <nav>
     <div ref="navbar" class="fixed left-0 right-0 top-0 z-10">
       <div
-        class="flex justify-between bg-backgroundLight/60 px-3 py-2 backdrop-blur-[10px] dark:bg-backgroundDark/60"
+        class="flex items-center justify-between bg-backgroundLight/60 px-3 py-2 backdrop-blur-[10px] dark:bg-backgroundDark/60"
       >
         <a
           href="#home"
-          class="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text font-bebas text-2xl text-textLight text-transparent md:text-3xl lg:text-4xl"
-          >BetterSearch</a
+          class="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text font-bebas text-2xl text-textLight text-transparent hover:scale-110 md:text-3xl lg:text-4xl"
+          >BetterSrch</a
         >
-
-        <div class="itesm-center flex justify-center">
+        <!-- Navbar links -->
+        <div
+          class="flex justify-center divide-x divide-solid divide-black/50 dark:divide-white/50"
+        >
           <!-- Light/Dark mode button -->
-          <button @click="toggleDark()" class="mr-3">
-            <!-- Moon icon -->
-            <Transition name="slide-up" mode="out-in">
+          <div class="flex justify-center">
+            <button
+              @click="toggleDark()"
+              class="button-trasition mr-2 hover:scale-110"
+            >
+              <!-- Moon icon -->
+              <Transition name="slide-up" mode="out-in">
+                <svg
+                  v-if="isDark"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="h-6 w-6 stroke-blue-500 hover:stroke-blue-700 md:h-7 md:w-7 lg:h-8 lg:w-8"
+                >
+                  <path
+                    d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                  ></path>
+                </svg>
+                <!-- Sun icon -->
+                <svg
+                  v-else
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="h-6 w-6 stroke-yellow-400 hover:stroke-yellow-500 md:h-7 md:w-7 lg:h-8 lg:w-8"
+                >
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+              </Transition>
+            </button>
+          </div>
+          <div class="flex justify-center">
+            <button class="button-trasition ml-2 dark:ml-3 hover:scale-110">
+              <!-- Button links modal button -->
               <svg
-                v-if="isDark"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="currentColor"
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="h-6 w-6 stroke-blue-500 hover:stroke-blue-700 md:h-7 md:w-7 lg:h-8 lg:w-8"
+                class="h-6 w-6 stroke-textLight dark:stroke-textDark md:h-7 md:w-7 lg:h-8 lg:w-8"
               >
-                <path
-                  d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
-                ></path>
+                <polyline points="21 8 21 21 3 21 3 8"></polyline>
+                <rect x="1" y="3" width="22" height="5"></rect>
+                <line x1="10" y1="12" x2="14" y2="12"></line>
               </svg>
-              <!-- Sun icon -->
+            </button>
+
+            <!-- Color customization button -->
+            <button class="button-trasition ml-2 hover:scale-110">
               <svg
-                v-else
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="h-6 w-6 stroke-yellow-400 hover:stroke-yellow-500 md:h-7 md:w-7 lg:h-8 lg:w-8"
+                class="h-6 w-6 stroke-textLight dark:stroke-textDark md:h-7 md:w-7 lg:h-8 lg:w-8"
               >
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                <path d="M2 2l7.586 7.586"></path>
+                <circle cx="11" cy="11" r="2"></circle>
               </svg>
-            </Transition>
-          </button>
-          <!-- Navigation menu button -->
-          <button @click="show = !show" class="dark:text-textDark">
-            <!-- Hamburger menu icon -->
-            <svg
-              v-if="!show"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="h-6 w-6 stroke-textLight dark:stroke-textDark md:h-7 md:w-7 lg:h-8 lg:w-8"
-            >
-              <line x1="21" y1="10" x2="7" y2="10"></line>
-              <line x1="21" y1="6" x2="3" y2="6"></line>
-              <line x1="21" y1="14" x2="3" y2="14"></line>
-              <line x1="21" y1="18" x2="7" y2="18"></line>
-            </svg>
-            <!-- X icon -->
-            <svg
-              v-else
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="h-6 w-6 stroke-textLight dark:stroke-textDark md:h-7 md:w-7 lg:h-8 lg:w-8"
-            >
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </button>
+            </button>
+          </div>
         </div>
       </div>
-      <!-- Navigation options -->
-      <Transition name="slide-fade">
-        <div
-          v-if="show"
-          class="flex flex-col bg-backgroundLight/90 px-3 pb-3 text-right dark:bg-backgroundDark/90"
-        >
-          <span class="mx-3 mt-1">
-            <a
-              @click="show = !show"
-              href="#about"
-              class="text-textLight hover:underline dark:text-textDark md:text-lg lg:text-xl"
-              >Save & Copy buttons (WIP)</a
-            >
-          </span>
-          <span class="mx-3 mt-1">
-            <a
-              @click="show = !show"
-              href="#projects"
-              class="text-textLight hover:underline dark:text-textDark md:text-lg lg:text-xl"
-              >Button order (WIP)</a
-            >
-          </span>
-          <span class="mx-3 mt-1">
-            <a
-              @click="show = !show"
-              href="#contact"
-              class="text-textLight hover:underline dark:text-textDark md:text-lg lg:text-xl"
-              >Customize colours (WIP)</a
-            >
-          </span>
-        </div>
-      </Transition>
     </div>
   </nav>
 </template>
 
 <style scoped>
+.button-trasition {
+  transition: all ease 300ms;
+}
+
 .slide-fade-enter-active,
 .slide-fade-leave-active {
   transition: 0.3s ease;
@@ -145,7 +121,7 @@ onClickOutside(navbar, () => (show.value = false));
 
 .slide-fade-enter-from,
 .slide-fade-leave-to {
-  transform: translateX(20px);
+  transform: translateX(50%);
   opacity: 0;
 }
 
