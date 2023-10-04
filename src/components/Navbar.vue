@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { useDark, useToggle, onClickOutside } from "@vueuse/core";
+import { useDark, useToggle } from "@vueuse/core";
+import { windowStore } from "@/stores/windowStores";
+import BaseModal from "./BaseModal.vue";
+import ModalCopyPaste from "./ModalCopyPaste.vue";
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
@@ -24,7 +27,7 @@ const toggleDark = useToggle(isDark);
           <div class="flex justify-center">
             <button
               @click="toggleDark()"
-              class="button-trasition mr-2 hover:scale-110"
+              class="button-trasition mr-2 hover:scale-110 lg:mr-4"
             >
               <!-- Moon icon -->
               <Transition name="slide-up" mode="out-in">
@@ -67,9 +70,13 @@ const toggleDark = useToggle(isDark);
               </Transition>
             </button>
           </div>
+
           <div class="flex justify-center">
-            <button class="button-trasition ml-2 dark:ml-3 hover:scale-110">
-              <!-- Button links modal button -->
+            <!-- Button links modal button -->
+            <button
+              @click="windowStore.showCopyPasteModal()"
+              class="button-trasition ml-2 hover:scale-110 dark:ml-3 lg:ml-5"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -86,7 +93,7 @@ const toggleDark = useToggle(isDark);
             </button>
 
             <!-- Color customization button -->
-            <button class="button-trasition ml-2 hover:scale-110">
+            <button class="button-trasition ml-2 hover:scale-110 lg:ml-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -107,9 +114,36 @@ const toggleDark = useToggle(isDark);
       </div>
     </div>
   </nav>
+
+  <Transition name="fade">
+    <BaseModal v-show="windowStore.CopyPasteWindow">
+      <Transition name="bounce">
+        <ModalCopyPaste v-if="windowStore.CopyPasteWindow" />
+      </Transition>
+    </BaseModal>
+  </Transition>
 </template>
 
 <style scoped>
+.bounce-enter-from,
+.bounce-leave-to {
+  scale: 0;
+}
+
+.bounce-enter-active,
+.bounce-leave-active {
+  transition: all 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.2s ease;
+}
 .button-trasition {
   transition: all ease 300ms;
 }

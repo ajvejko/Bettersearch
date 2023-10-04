@@ -4,6 +4,7 @@ import { buttonStore } from "./buttonStores";
 export const windowStore = reactive({
   AddWindow: false,
   EditWindow: false,
+  CopyPasteWindow: false,
   EditMode: false,
   showAddModal(): void {
     buttonStore.name = "";
@@ -24,8 +25,11 @@ export const windowStore = reactive({
     buttonStore.index = index;
     this.EditWindow = !this.EditWindow;
   },
-
   switchEditMode(): void {
     this.EditMode = !this.EditMode;
+  },
+
+  showCopyPasteModal(): void {
+    this.CopyPasteWindow = !this.CopyPasteWindow;
   },
 });
