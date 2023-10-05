@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import { useDark, useToggle } from "@vueuse/core";
+import { useDark, useToggle, onClickOutside } from "@vueuse/core";
+import { ref } from "vue";
 import { windowStore } from "@/stores/windowStores";
 import BaseModal from "./BaseModal.vue";
 import ModalCopyPaste from "./ModalCopyPaste.vue";
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
+const webCopyPaste = ref(null);
+
+onClickOutside(webCopyPaste, () => (windowStore.CopyPasteWindow = false));
 </script>
 
 <template>
@@ -117,7 +121,7 @@ const toggleDark = useToggle(isDark);
   <Transition name="fade">
     <BaseModal v-show="windowStore.CopyPasteWindow">
       <Transition name="bounce">
-        <ModalCopyPaste v-if="windowStore.CopyPasteWindow" />
+        <ModalCopyPaste ref="webCopyPaste" v-if="windowStore.CopyPasteWindow" />
       </Transition>
     </BaseModal>
   </Transition>
