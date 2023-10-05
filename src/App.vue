@@ -23,4 +23,8 @@ onMounted(() => {
 body {
   @apply bg-backgroundLight dark:bg-backgroundDark;
 }
+
+.button-transition {
+  transition: all ease 300ms;
+}
 </style>

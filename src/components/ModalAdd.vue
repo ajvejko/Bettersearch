@@ -11,12 +11,12 @@ const searchURL = ref("");
 
 <template>
   <form
-    class="relative max-w-lg w-3/4 rounded-lg bg-backgroundLight px-4 py-3 text-center shadow-[0_0px_15px_rgba(0,0,0,0.7)] dark:bg-backgroundDark dark:shadow-white md:w-1/2 lg:px-6"
+    class="relative w-3/4 max-w-lg rounded-lg bg-backgroundLight px-4 py-3 text-center shadow-[0_0px_15px_rgba(0,0,0,0.7)] dark:bg-backgroundDark dark:shadow-white md:w-1/2 lg:px-6"
   >
     <button
       type="button"
       @click="windowStore.showAddModal()"
-      class="absolute right-0 top-0 translate-x-[40%] translate-y-[-40%] rounded-lg border-2 border-black bg-white shadow-black hover:border-primary active:border-primary dark:border-white dark:bg-backgroundDark dark:hover:border-primary dark:active:border-primary"
+      class="button-transition absolute right-0 top-0 translate-x-[40%] translate-y-[-40%] rounded-lg border-2 border-black bg-white shadow-black hover:scale-110 active:border-primary dark:border-white dark:bg-backgroundDark dark:active:border-primary"
     >
       <!-- X icon -->
       <svg
@@ -86,7 +86,7 @@ const searchURL = ref("");
         buttonStore.addButton(name, homeURL, searchURL);
         windowStore.showAddModal();
       "
-      class="translate-y-[80%] rounded-lg border-2 border-black bg-white px-3 font-bebas text-2xl text-primary hover:border-primary active:border-primary dark:border-white dark:bg-backgroundDark dark:hover:border-primary dark:active:border-primary md:text-3xl lg:text-4xl"
+      class="button-transition translate-y-[80%] rounded-lg border-2 border-black bg-white px-3 font-bebas text-2xl text-primary hover:scale-110 active:border-primary dark:border-white dark:bg-backgroundDark dark:active:border-primary md:text-3xl lg:text-4xl"
     >
       Add Button
     </button>

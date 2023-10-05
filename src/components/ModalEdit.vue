@@ -19,7 +19,7 @@ const index = ref(buttonStore.index);
         buttonStore.deleteButton();
         windowStore.showEditModal(name, homeURL, searchURL, index);
       "
-      class="absolute left-0 top-0 translate-x-[-40%] translate-y-[-40%] rounded-lg border-2 border-black bg-white text-rose-600 shadow-black hover:border-rose-600 active:border-rose-600 dark:border-white dark:bg-backgroundDark dark:hover:border-rose-600 dark:active:border-rose-600"
+      class="dark: button-transition absolute left-0 top-0 translate-x-[-40%] translate-y-[-40%] rounded-lg border-2 border-black bg-white text-rose-600 shadow-black hover:scale-110 active:border-rose-600 dark:border-white dark:bg-backgroundDark dark:active:border-rose-600"
     >
       <!-- Trashbin icon -->
       <svg
@@ -41,7 +41,7 @@ const index = ref(buttonStore.index);
     <button
       type="button"
       @click="windowStore.showEditModal(name, homeURL, searchURL, index)"
-      class="absolute right-0 top-0 translate-x-[40%] translate-y-[-40%] rounded-lg border-2 border-black bg-white text-rose-600 shadow-black hover:border-rose-600 active:border-rose-600 dark:border-white dark:bg-backgroundDark dark:hover:border-rose-600 dark:active:border-rose-600"
+      class="button-transition absolute right-0 top-0 translate-x-[40%] translate-y-[-40%] rounded-lg border-2 border-black bg-white text-rose-600 shadow-black hover:scale-110 active:border-rose-600 dark:border-white dark:bg-backgroundDark dark:active:border-rose-600"
     >
       <!-- X icon -->
       <svg
@@ -111,7 +111,7 @@ const index = ref(buttonStore.index);
         buttonStore.editButton(name, homeURL, searchURL, index);
         windowStore.showEditModal(name, homeURL, searchURL, index);
       "
-      class="translate-y-[80%] rounded-lg border-2 border-black bg-white px-3 font-bebas text-2xl text-primary hover:border-primary active:border-primary dark:border-white dark:bg-backgroundDark dark:hover:border-primary dark:active:border-primary md:text-3xl"
+      class="button-transition translate-y-[80%] rounded-lg border-2 border-black bg-white px-3 font-bebas text-2xl text-primary hover:scale-110 active:border-primary dark:border-white dark:bg-backgroundDark dark:active:border-primary md:text-3xl"
     >
       Edit Button
     </button>

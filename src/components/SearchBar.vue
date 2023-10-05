@@ -32,9 +32,10 @@ const search = (): void => {
       ref="searchInput"
       @keyup.enter="search"
       placeholder="Search the web"
-      class="input-search w-2/3 max-w-3xl lg:w-1/2 rounded-l-full border-2 border-r-0 border-black/80 bg-white/60 px-5 py-2 text-xl text-textLight outline-none placeholder:font-inter placeholder:text-textLight focus:bg-white/90 dark:border-white/50 dark:bg-black/50 dark:text-textDark dark:placeholder:text-textDark dark:focus:bg-black/70 md:text-2xl"
+      class="input-search w-2/3 max-w-3xl rounded-l-full border-2 border-r-0 border-black/80 bg-white/60 px-5 py-2 text-xl text-textLight outline-none placeholder:font-inter placeholder:text-textLight focus:bg-white/90 dark:border-white/50 dark:bg-black/50 dark:text-textDark dark:placeholder:text-textDark dark:focus:bg-black/70 md:text-2xl lg:w-1/2"
     />
     <button
+      @click="search"
       class="search-button items-center rounded-r-full border-y-2 border-r-2 border-black/80 bg-white/60 px-3 dark:border-white/50 dark:bg-black/50"
     >
       <svg
@@ -44,7 +45,7 @@ const search = (): void => {
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="h-6 w-6 stroke-primary md:h-7 md:w-7 lg:h-8 lg:w-8"
+        class="button-transition h-6 w-6 stroke-primary hover:scale-110 md:h-7 md:w-7 lg:h-8 lg:w-8"
       >
         <circle cx="11" cy="11" r="8"></circle>
         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>

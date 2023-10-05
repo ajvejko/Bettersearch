@@ -31,7 +31,7 @@ const changeButtonList = () => {
       type="button"
       v-if="isSupported"
       @click="copy(newButtonList)"
-      class="absolute left-0 top-0 translate-x-[-40%] translate-y-[-40%] rounded-lg border-2 border-black bg-white text-rose-600 shadow-black hover:border-rose-600 active:border-rose-600 dark:border-white dark:bg-backgroundDark dark:hover:border-rose-600 dark:active:border-rose-600"
+      class="button-transition absolute left-0 top-0 translate-x-[-40%] translate-y-[-40%] rounded-lg border-2 border-black bg-white text-rose-600 shadow-black hover:scale-110 active:border-rose-600 dark:border-white dark:bg-backgroundDark dark:active:border-rose-600"
     >
       <!-- Copy icon -->
       <svg
@@ -53,7 +53,7 @@ const changeButtonList = () => {
     <button
       type="button"
       @click="windowStore.showCopyPasteModal()"
-      class="absolute right-0 top-0 translate-x-[40%] translate-y-[-40%] rounded-lg border-2 border-black bg-white shadow-black hover:border-primary active:border-primary dark:border-white dark:bg-backgroundDark dark:hover:border-primary dark:active:border-primary"
+      class="button-transition absolute right-0 top-0 translate-x-[40%] translate-y-[-40%] rounded-lg border-2 border-black bg-white shadow-black hover:scale-110 active:border-primary dark:border-white dark:bg-backgroundDark dark:active:border-primary"
     >
       <!-- X icon -->
       <svg
@@ -91,7 +91,7 @@ const changeButtonList = () => {
     <button
       type="button"
       @click="changeButtonList()"
-      class="translate-y-[80%] rounded-lg border-2 border-black bg-white px-3 font-bebas text-2xl text-primary hover:border-primary active:border-primary dark:border-white dark:bg-backgroundDark dark:hover:border-primary dark:active:border-primary md:text-3xl lg:text-4xl"
+      class="button-transition translate-y-[80%] rounded-lg border-2 border-black bg-white px-3 font-bebas text-2xl text-primary hover:scale-110 active:border-primary dark:border-white dark:bg-backgroundDark dark:active:border-primary md:text-3xl lg:text-4xl"
     >
       Use new buttons
     </button>

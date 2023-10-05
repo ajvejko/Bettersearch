@@ -27,7 +27,7 @@ const toggleDark = useToggle(isDark);
           <div class="flex justify-center">
             <button
               @click="toggleDark()"
-              class="button-trasition mr-2 hover:scale-110 lg:mr-4"
+              class="button-transition mr-2 hover:scale-110 lg:mr-4"
             >
               <!-- Moon icon -->
               <Transition name="slide-up" mode="out-in">
@@ -36,11 +36,10 @@ const toggleDark = useToggle(isDark);
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="currentColor"
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="h-6 w-6 stroke-blue-500 hover:stroke-blue-700 md:h-7 md:w-7 lg:h-8 lg:w-8"
+                  class="h-6 w-6 stroke-blue-500 md:h-7 md:w-7 lg:h-8 lg:w-8"
                 >
                   <path
                     d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
@@ -55,7 +54,7 @@ const toggleDark = useToggle(isDark);
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="h-6 w-6 stroke-yellow-400 hover:stroke-yellow-500 md:h-7 md:w-7 lg:h-8 lg:w-8"
+                  class="h-6 w-6 stroke-yellow-400 md:h-7 md:w-7 lg:h-8 lg:w-8"
                 >
                   <circle cx="12" cy="12" r="5"></circle>
                   <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -75,7 +74,7 @@ const toggleDark = useToggle(isDark);
             <!-- Button links modal button -->
             <button
               @click="windowStore.showCopyPasteModal()"
-              class="button-trasition ml-2 hover:scale-110 dark:ml-3 lg:ml-5"
+              class="button-transition ml-2 hover:scale-110 dark:ml-3 lg:ml-5"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +92,7 @@ const toggleDark = useToggle(isDark);
             </button>
 
             <!-- Color customization button -->
-            <button class="button-trasition ml-2 hover:scale-110 lg:ml-4">
+            <button class="button-transition ml-2 hover:scale-110 lg:ml-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -143,9 +142,6 @@ const toggleDark = useToggle(isDark);
 .fade-enter-active,
 .fade-leave-active {
   transition: all 0.2s ease;
-}
-.button-trasition {
-  transition: all ease 300ms;
 }
 
 .slide-fade-enter-active,

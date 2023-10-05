@@ -28,7 +28,10 @@ onClickOutside(webEdit, () => (windowStore.EditWindow = false));
     </h2>
 
     <!-- Edit button -->
-    <button class="ml-1" @click="windowStore.switchEditMode">
+    <button
+      class="button-transition ml-1 hover:scale-110"
+      @click="windowStore.switchEditMode"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
