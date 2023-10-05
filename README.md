@@ -1,40 +1,22 @@
-# bettersearch
+# Bettersearch
 
-This template should help get you started developing with Vue 3 in Vite.
+This project is a personal learning project where I experiment with new technologies such as React and Tailwind. <br/>
+The goal of BetterSearch is to provide a faster and more efficient way to search the web by allowing users to set custom shortcuts for their favorite websites without having to remember shortcuts like in the DuckDuckGo bangs.
 
-## Recommended IDE Setup
+## How to use
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+1. Add a custom site by clicking on the `+` button.
+2. Input your desired home link (example: `https://www.youtube.com/`) and search link (example: `https://www.youtube.com/results?search_query=`).
+3. Now you can search on that site by inputting your desired search term in the search bar and selecting the corresponding button.
+4. To use the home link the search bar must be empty when trying to search with a selected button, this acts as a shortcut.
+5. You can also search on google by not selecting any button and just press enter.
 
-## Type Support for `.vue` Imports in TS
+- To edit or delete a button click the edit icon next to `Websites` header and then just click any button you would like to edit.
+- Want to copy your button setup? Click the archive button on the top and copy icon in the modal that will appear. To import your setup just paste the copied text into the text area and click the button on the bottom of the modal.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## To-Do
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
+- Make my own extension for custom new tab.
+- Add a way to customize colors of the site.
+- Add a way to drag and drop the buttons to reoder them.
+- Add a tutorial on how to use the site.
