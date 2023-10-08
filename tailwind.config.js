@@ -18,6 +18,7 @@ module.exports = {
       },
       animation: {
         blob: "blob 8s infinite",
+        oval: "oval 20s infinite",
       },
       keyframes: {
         blob: {
@@ -32,6 +33,20 @@ module.exports = {
           },
           "100%": {
             transform: "translate(0px, 0px) scale(1)",
+          },
+        },
+        oval: {
+          "0%": {
+            transform: "translate(0px, 0px) scale(1) rotate(0deg)",
+          },
+          "30%": {
+            transform: "translate(50px, -60px) scale(1.1) rotate(45deg)",
+          },
+          "66%": {
+            transform: "translate(-20px, 20px) scale(0.9) rotate(-45deg)",
+          },
+          "100%": {
+            transform: "translate(0px, 0px) scale(1) rotate(0deg)",
           },
         },
       },

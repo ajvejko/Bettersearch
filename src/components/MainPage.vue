@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import SearchBar from "./SearchBar.vue";
 import WebTable from "./WebTable.vue";
-import Background from "./Background.vue";
+import BackgroundMainPage from "./BackgroundMainPage.vue";
 </script>
 
 <template>
@@ -26,6 +26,6 @@ import Background from "./Background.vue";
         d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"
       />
     </svg>
-    <Background />
+    <BackgroundMainPage />
   </section>
 </template>
