@@ -31,7 +31,7 @@ onClickOutside(webCopyPaste, () => (windowStore.CopyPasteWindow = false));
           <div class="flex justify-center">
             <button
               @click="toggleDark()"
-              class="button-transition mr-2 hover:scale-110 lg:mr-4"
+              class="button-transition mr-2 hover:scale-110"
             >
               <!-- Moon icon -->
               <Transition name="slide-up" mode="out-in">
@@ -78,7 +78,7 @@ onClickOutside(webCopyPaste, () => (windowStore.CopyPasteWindow = false));
             <!-- Button links modal button -->
             <button
               @click="windowStore.showCopyPasteModal()"
-              class="button-transition ml-2 hover:scale-110 dark:ml-3 lg:ml-5"
+              class="button-transition ml-2 hover:scale-110 dark:ml-3"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -92,24 +92,6 @@ onClickOutside(webCopyPaste, () => (windowStore.CopyPasteWindow = false));
                 <polyline points="21 8 21 21 3 21 3 8"></polyline>
                 <rect x="1" y="3" width="22" height="5"></rect>
                 <line x1="10" y1="12" x2="14" y2="12"></line>
-              </svg>
-            </button>
-
-            <!-- Color customization button -->
-            <button class="button-transition ml-2 hover:scale-110 lg:ml-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-6 w-6 stroke-textLight dark:stroke-textDark md:h-7 md:w-7 lg:h-8 lg:w-8"
-              >
-                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-                <path d="M2 2l7.586 7.586"></path>
-                <circle cx="11" cy="11" r="2"></circle>
               </svg>
             </button>
           </div>

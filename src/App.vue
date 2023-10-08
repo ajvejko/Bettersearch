@@ -2,6 +2,7 @@
 import Background from "./components/Background.vue";
 import Navbar from "./components/Navbar.vue";
 import MainPage from "./components/MainPage.vue";
+import TutorialPage from "./components/TutorialPage.vue";
 import { buttonStore } from "./stores/buttonStores";
 import { onMounted } from "vue";
 
@@ -16,12 +17,12 @@ onMounted(() => {
 <template>
   <Navbar />
   <MainPage />
-  <Background />
+  <TutorialPage />
 </template>
 
 <style>
 body {
-  @apply bg-backgroundLight dark:bg-backgroundDark;
+  @apply overflow-x-hidden bg-backgroundLight dark:bg-backgroundDark;
 }
 
 .button-transition {
