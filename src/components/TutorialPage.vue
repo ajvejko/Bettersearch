@@ -62,7 +62,7 @@
       </p>
     </div>
     <div
-      class="absolute bottom-0 left-0 right-0 flex justify-center border-t pb-1 pt-2 text-center font-inter lg:text-lg"
+      class="absolute bottom-0 left-0 right-0 flex justify-center border-t bg-backgroundLight pb-1 pt-2 text-center font-inter dark:bg-backgroundDark lg:text-lg"
     >
       Want to checkout the source code? ->
       <a
