@@ -34,16 +34,20 @@
       </div>
 
       <div class="mt-10 text-center">
-        <h3 class="font-bebas text-3xl text-red-500 md:text-4xl lg:text-5xl">Youtube</h3>
+        <h3 class="font-bebas text-3xl text-red-500 md:text-4xl lg:text-5xl">
+          Youtube
+        </h3>
         <div class="mt-1 font-bebas text-xl font-bold md:text-2xl lg:text-3xl">
           Home URL:
-          <span class="font-inter text-base font-normal underline md:text-lg lg:text-xl"
+          <span
+            class="font-inter text-base font-normal underline md:text-lg lg:text-xl"
             >https://www.youtube.com</span
           >
         </div>
         <div class="mt-1 font-bebas text-xl font-bold md:text-2xl lg:text-3xl">
           Search URL:
-          <span class="font-inter text-base font-normal underline md:text-lg lg:text-xl"
+          <span
+            class="font-inter text-base font-normal underline md:text-lg lg:text-xl"
             >https://www.youtube.com/results?search_query=</span
           >
         </div>
@@ -58,7 +62,7 @@
       </p>
     </div>
     <div
-      class="absolute bottom-0 left-0 right-0 flex justify-center border-t pb-1 pt-2 text-center lg:text-lg font-inter"
+      class="absolute bottom-0 left-0 right-0 flex justify-center border-t pb-1 pt-2 text-center font-inter lg:text-lg"
     >
       Want to checkout the source code? ->
       <a
