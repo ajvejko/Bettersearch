@@ -17,6 +17,4 @@ The goal of BetterSearch is to provide a faster and more efficient way to search
 ## To-Do
 
 - Make my own extension for custom new tab.
-- Add a way to customize colors of the site.
 - Add a way to drag and drop the buttons to reoder them.
-- Add a tutorial on how to use the site.
