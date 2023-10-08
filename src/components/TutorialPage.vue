@@ -4,13 +4,13 @@
     id="tutorial"
     class="relative h-screen text-textLight dark:text-textDark"
   >
-    <div class="m-auto max-w-6xl">
+    <div class="m-auto max-w-6xl px-6">
       <h1
         class="pt-32 text-center font-bebas text-5xl focus:shadow-[0_0px_11px_rgba(0,0,0,0.25)] md:text-6xl lg:text-7xl"
       >
         Tutorial
       </h1>
-      <div class="ml-5 mt-10 md:ml-10">
+      <div class="mt-10 md:ml-10">
         <span
           class="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text font-bebas text-3xl text-transparent md:text-4xl lg:text-5xl"
         >
@@ -33,7 +33,7 @@
         </ul>
       </div>
 
-      <div class="mt-10 text-center">
+      <div class="mt-20 text-center">
         <h3 class="font-bebas text-3xl text-red-500 md:text-4xl lg:text-5xl">
           Youtube
         </h3>
@@ -52,7 +52,7 @@
           >
         </div>
       </div>
-      <p class="mt-14 text-center md:text-lg lg:text-xl">
+      <p class="mt-20 text-center md:text-lg lg:text-xl">
         This is all the site does.<br />
         Now go and enjoy better searching with<br />
         <span
