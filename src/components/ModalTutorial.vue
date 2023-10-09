@@ -42,7 +42,7 @@ const goToTutorial = (): void => {
     </h1>
     <div class="text-textLight dark:text-textDark lg:text-lg">
       <p class="mt-3">
-        If you already know how to this site, you can close this window by
+        If you already know how this site works, you can close this window by
         clicking the <span class="font-bold text-red-500">X</span> button on the
         top-right corner.
       </p>
