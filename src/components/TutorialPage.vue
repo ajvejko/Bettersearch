@@ -14,7 +14,7 @@
         <span
           class="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text font-bebas text-3xl text-transparent md:text-4xl lg:text-5xl"
         >
-          How this site works?
+          How the site works?
         </span>
         <ul class="ml-5 max-w-sm list-outside list-disc lg:text-lg">
           <li>
@@ -25,7 +25,7 @@
           </li>
           <li>
             <p class="mt-5 font-inter">
-              To see if you can use this on your site use the sites earch
+              To see if you can use this on your site use the sites search
               feature and look at the URL.
               <span class="font-bold underline">Look at this example:</span>
             </p>
@@ -57,8 +57,8 @@
         Now go and enjoy better searching with<br />
         <span
           class="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text font-bebas text-3xl text-transparent md:text-4xl lg:text-5xl"
-          >Better Search</span
-        >!
+          >Better Search!</span
+        >
       </p>
     </div>
     <div
