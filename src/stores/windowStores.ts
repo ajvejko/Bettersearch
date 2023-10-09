@@ -6,6 +6,7 @@ export const windowStore = reactive({
   EditWindow: false,
   CopyPasteWindow: false,
   EditMode: false,
+  isFirstTime: Boolean(null),
   showAddModal(): void {
     buttonStore.name = "";
     buttonStore.homeURL = "";
