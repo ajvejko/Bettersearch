@@ -13,19 +13,6 @@ import BackgroundMainPage from "./BackgroundMainPage.vue";
     </h1>
     <SearchBar />
     <WebTable />
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke-width="1.5"
-      class="absolute bottom-0 left-1/2 right-1/2 -z-10 h-6 w-6 animate-bounce stroke-textLight dark:stroke-textDark md:h-8 md:w-8"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"
-      />
-    </svg>
     <BackgroundMainPage />
   </section>
 </template>
