@@ -1,4 +1,3 @@
-<script setup lang="ts"></script>
 <template>
   <!-- Background -->
   <div class="absolute top-0 -z-10 flex h-screen w-screen overflow-hidden">

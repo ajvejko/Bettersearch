@@ -20,7 +20,7 @@ onClickOutside(webCopyPaste, () => (windowStore.CopyPasteWindow = false));
       >
         <a
           href="#home"
-          class="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text font-bebas text-2xl text-textLight text-transparent hover:scale-110 md:text-3xl lg:text-4xl"
+          class="button-transition bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text font-bebas text-2xl text-textLight text-transparent hover:scale-110 md:text-3xl lg:text-4xl"
           >BetterSrch</a
         >
         <!-- Navbar links -->

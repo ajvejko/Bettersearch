@@ -1,4 +1,3 @@
-<script setup lang="ts"></script>
 <template>
   <section
     id="tutorial"
@@ -34,6 +33,7 @@
       </div>
 
       <div class="mt-20 text-center">
+         
         <h3 class="font-bebas text-3xl text-red-500 md:text-4xl lg:text-5xl">
           Youtube
         </h3>
