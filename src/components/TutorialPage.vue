@@ -1,7 +1,7 @@
 <template>
   <section
     id="tutorial"
-    class="relative min-h-screen text-textLight dark:text-textDark"
+    class="relative flex min-h-screen flex-col text-textLight dark:text-textDark"
   >
     <div class="m-auto max-w-6xl px-6">
       <h1
@@ -33,7 +33,6 @@
       </div>
 
       <div class="mt-20 text-center">
-         
         <h3 class="font-bebas text-3xl text-red-500 md:text-4xl lg:text-5xl">
           Youtube
         </h3>
@@ -52,7 +51,7 @@
           >
         </div>
       </div>
-      <p class="mt-20 text-center md:text-lg lg:text-xl">
+      <p class="mb-8 mt-16 text-center md:text-lg lg:text-xl">
         This is all the site does.<br />
         Now go and enjoy better searching with<br />
         <span
@@ -62,7 +61,7 @@
       </p>
     </div>
     <div
-      class="absolute bottom-0 left-0 right-0 flex justify-center border-t bg-backgroundLight pb-1 pt-2 text-center font-inter dark:bg-backgroundDark lg:text-lg"
+      class="flex grow-0 justify-center border-t bg-backgroundLight pb-1 pt-2 text-center font-inter dark:bg-backgroundDark lg:text-lg"
     >
       Want to checkout the source code? ->
       <a
