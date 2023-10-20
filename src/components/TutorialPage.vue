@@ -1,7 +1,7 @@
 <template>
   <section
     id="tutorial"
-    class="relative h-screen text-textLight dark:text-textDark"
+    class="relative min-h-screen text-textLight dark:text-textDark"
   >
     <div class="m-auto max-w-6xl px-6">
       <h1
